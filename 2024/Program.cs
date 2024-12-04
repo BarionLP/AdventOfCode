@@ -1,6 +1,6 @@
 ﻿using AdventOfCode.Util;
 using AdventOfCode2024;
 
-var input = await InputHelper.GetInputAsLines(2024, 1);
+var input = await InputHelper.GetInput(2024, 3);
 
-Day01.Run(input);
+Day03.Run(input);
