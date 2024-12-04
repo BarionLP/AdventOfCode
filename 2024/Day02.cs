@@ -1,11 +1,10 @@
 namespace AdventOfCode2024;
 
-// 40 3 6 7 8 9
 public static class Day02
 {
-    public static void Run(IEnumerable<string> reports)
+    public static void Run(string reports)
     {
-        Console.WriteLine(reports.Count(input =>
+        Console.WriteLine(InputHelper.EnumerateLines(reports).Count(input =>
         {
             var report = new Report(input
                 .Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)

@@ -2,12 +2,12 @@ namespace AdventOfCode2024;
 
 public class Day01
 {
-    public static void Run(IEnumerable<string> input)
+    public static void Run(string input)
     {
         var left = new List<int>();
         var right = new List<int>();
 
-        foreach (var line in input)
+        foreach (var line in InputHelper.EnumerateLines(input))
         {
             var tmp = line.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
             left.Add(int.Parse(tmp[0]));
