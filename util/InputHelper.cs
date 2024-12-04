@@ -18,5 +18,5 @@ public static class InputHelper
         File.WriteAllText(fileName, input);
         return input;
     }
-    public static async Task<IEnumerable<string>> GetInputAsLines(int year, int day) => (await GetInput(year, day)).Split("\n", StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+    public static IEnumerable<string> EnumerateLines(string input) => input.Split("\n", StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
 }
