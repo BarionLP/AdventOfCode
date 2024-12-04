@@ -2,9 +2,10 @@ namespace AdventOfCode2023;
 
 public static class Day03
 {
-    public static void Run(IEnumerable<string> input)
+    public static void Run(string input)
     {
-        var scematic = new Scematic(string.Join("", input), input.First().Length);
+        var lines = InputHelper.EnumerateLines(input);
+        var scematic = new Scematic(string.Join("", lines), lines.First().Length);
 
         Console.WriteLine(scematic.EnumerateNumbersNextSymbols().Sum());
     }
