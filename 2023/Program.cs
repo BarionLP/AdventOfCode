@@ -1,5 +1,6 @@
-﻿using AdventOfCode2023;
+﻿using System.Collections.Immutable;
+using AdventOfCode2023;
 
-var input = await InputHelper.GetInput(2023, 5);
+var input = await InputHelper.GetInput(2023, 6);
 
-Day05.Run(input);
+Day06.Run(input);
