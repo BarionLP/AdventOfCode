@@ -14,22 +14,11 @@ public class Day01
             right.Add(int.Parse(tmp[1]));
         }
 
-        left.Sort();
-        right.Sort();
-
-        var distance = 0;
-        foreach (var (a, b) in left.Zip(right))
-        {
-            distance += Math.Abs(a - b);
-        }
+        var distance = left.Order().Zip(right.Order(), (a, b) => Math.Abs(a - b)).Sum();
         
         Console.WriteLine(distance);
 
-        var similarity = 0;
-        foreach (var item in left)
-        {
-            similarity += item * right.Count(other => other == item);
-        }
+        var similarity = right.Where(new HashSet<int>(left).Contains).Sum();
         Console.WriteLine(similarity);
     }
 }
