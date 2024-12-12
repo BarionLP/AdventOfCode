@@ -14,6 +14,12 @@ public sealed class CharMap(string map, int width) : IEnumerable<char>
     public bool IsOnMap(Vector2 pos) => IsOnMap(pos.X, pos.Y);
     public Vector2 IndexToPos(int index) => new(index % Width, index / Width);
 
+    public static CharMap CreateFromLines(string map)
+    {
+        var lines = InputHelper.EnumerateLines(map);
+        return new CharMap(string.Join("", lines), lines.First().Length);
+    }
+
     public IEnumerator<char> GetEnumerator() => map.GetEnumerator();
     IEnumerator IEnumerable.GetEnumerator() => map.GetEnumerator();
 }
