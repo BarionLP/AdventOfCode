@@ -1,10 +1,12 @@
+namespace AdventOfCode2024;
+
 public static class Day14
 {
     public static void Run(string input)
     {
         var fieldSize = new Vector2(101, 103);
         var center = fieldSize / 2;
-        
+
         var machines = InputHelper.EnumerateLines(input).Select(ParseMachine);
         var futureMachines = machines.Select(machine => (machine.position + 100 * machine.velocity) % fieldSize).Select(pos => new Vector2(pos.X < 0 ? fieldSize.X + pos.X : pos.X, pos.Y < 0 ? fieldSize.Y + pos.Y : pos.Y)).ToArray();
 

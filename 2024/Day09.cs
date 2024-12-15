@@ -1,5 +1,4 @@
-
-//Day09.Run("2333133121414131402");
+namespace AdventOfCode2024;
 
 public static class Day09
 {

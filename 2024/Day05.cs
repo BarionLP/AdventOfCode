@@ -1,6 +1,3 @@
-using System.Collections.Immutable;
-using System.Text;
-
 namespace AdventOfCode2024;
 
 public static class Day05

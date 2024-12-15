@@ -1,6 +1,3 @@
-using System.Collections.Immutable;
-using System.Diagnostics;
-
 namespace AdventOfCode2024;
 
 public static class Day07

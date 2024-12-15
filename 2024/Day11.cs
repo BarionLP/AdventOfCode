@@ -1,3 +1,5 @@
+namespace AdventOfCode2024;
+
 public static class Day11
 {
     public static void Run(string input)
