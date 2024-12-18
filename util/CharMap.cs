@@ -3,9 +3,13 @@ using System.Text;
 
 namespace AdventOfCode.Util;
 
-public sealed class CharMap(string map, int width) : IEnumerable<char>
+public sealed class CharMap(char[] map, int width) : IEnumerable<char>
 {
-    private readonly char[] map = map.ToCharArray();
+    private readonly char[] map = map;
+
+    public CharMap(string map, int width) 
+    : this(map.ToCharArray(), width) { }
+
     public int Width { get; } = width;
     public int Height { get; } = map.Length / width;
 
@@ -36,6 +40,13 @@ public sealed class CharMap(string map, int width) : IEnumerable<char>
         => CreateFromLines(InputHelper.EnumerateLines(map));
     public static CharMap CreateFromLines(IEnumerable<string> lines)
         => new(string.Join("", lines), lines.First().Length);
+
+    public static CharMap Create(int width, int height, char symbol)
+    {
+        var data = new char[width * height];
+        data.AsSpan().Fill(symbol);
+        return new(data, height);
+    }
 
     public override string ToString()
     {
