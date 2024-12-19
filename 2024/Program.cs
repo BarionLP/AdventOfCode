@@ -1,5 +1,5 @@
 ﻿using AdventOfCode2024;
 
-var input = await InputHelper.GetInput(2024, 16);
+var input = await InputHelper.GetInput(2024, 18);
 
-Day16.Run(input);
+Day18.Run(input);
