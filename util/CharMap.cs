@@ -7,7 +7,7 @@ public sealed class CharMap(char[] map, int width) : IEnumerable<char>
 {
     private readonly char[] map = map;
 
-    public CharMap(string map, int width) 
+    public CharMap(string map, int width)
     : this(map.ToCharArray(), width) { }
 
     public int Width { get; } = width;
@@ -35,6 +35,17 @@ public sealed class CharMap(char[] map, int width) : IEnumerable<char>
     public bool IsOnMap(Vector2 pos) => IsOnMap(pos.X, pos.Y);
     public Vector2 IndexToPos(int index) => new(index % Width, index / Width);
     public Vector2 PositionOf(char symbol) => IndexToPos(Array.IndexOf(map, symbol));
+
+    public IEnumerable<Vector2> EnumeratePositions()
+    {
+        for (var y = 0; y < Height; y++)
+        {
+            for (var x = 0; x < Width; x++)
+            {
+                yield return (x, y);
+            }
+        }
+    }
 
     public static CharMap CreateFromLines(string map)
         => CreateFromLines(InputHelper.EnumerateLines(map));
