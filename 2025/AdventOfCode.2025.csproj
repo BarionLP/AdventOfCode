@@ -12,8 +12,4 @@
     <ProjectReference Include="..\util\AdventOfCode.Util.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Ametrin.Optional" Version="0.3.0" />
-  </ItemGroup>
-
 </Project>

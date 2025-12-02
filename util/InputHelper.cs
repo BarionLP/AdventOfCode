@@ -3,6 +3,13 @@ namespace AdventOfCode.Util;
 public static class InputHelper
 {
     private static readonly string key = File.ReadAllText("SECRETS");
+
+    public static Task<string> GetInput(DateTime date)
+    {
+        if (date.Month is not 12) throw new InvalidOperationException($"{date} has no puzzle");
+        return GetInput(date.Year, date.Day);
+    }
+
     public static async Task<string> GetInput(int year, int day)
     {
         var fileName = $"{year}-{day}";
@@ -18,5 +25,6 @@ public static class InputHelper
         File.WriteAllText(fileName, input);
         return input;
     }
+
     public static IEnumerable<string> EnumerateLines(string input) => input.Split("\n", StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
 }
