@@ -51,9 +51,9 @@ public static class Day02
     {
         var center = (number.Length / 2) + 1;
 
-        foreach(var length in 1..center)
+        foreach (var length in 1..center)
         {
-            if(Impl(number, length))
+            if (Impl(number, length))
             {
                 return true;
             }
