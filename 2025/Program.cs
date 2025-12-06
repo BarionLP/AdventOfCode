@@ -1,4 +1,4 @@
 ﻿using AdventOfCode2025;
 
-Day05.RunExample();
-await Day05.Run();
+Day06.RunExample();
+await Day06.Run();

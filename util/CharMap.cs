@@ -48,7 +48,7 @@ public sealed class CharMap(char[] map, int width) : IEnumerable<char>
     }
 
     public static CharMap CreateFromLines(string map)
-        => CreateFromLines(InputHelper.EnumerateLines(map));
+        => CreateFromLines(map.Split('\n', StringSplitOptions.RemoveEmptyEntries).Select(static line => line.Trim('\r')));
     public static CharMap CreateFromLines(IEnumerable<string> lines)
         => new(string.Join("", lines), lines.First().Length);
 
